@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Tab?>
+<?import javafx.scene.control.TabPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gymsystem.vistas.TurnosController">
+   <children>
+      <ImageView fitHeight="476.0" fitWidth="714.0" layoutX="-2.0" layoutY="17.0" opacity="0.56" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/fotoGim.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="310.0" layoutY="27.0" text="Turnos" textFill="#ab0909">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tablaTurno" layoutX="45.0" layoutY="102.0" prefHeight="263.0" prefWidth="545.0">
+         <columns>
+            <TableColumn fx:id="clIdTurnos" minWidth="0.0" prefWidth="84.0" text="IDturnos" />
+            <TableColumn fx:id="clNombreTurnos" prefWidth="75.0" text="Nombre" />
+            <TableColumn fx:id="clApellidoTurnos" prefWidth="75.0" text="Apellido" />
+            <TableColumn fx:id="clDniTurnos" prefWidth="75.0" text="Dni" />
+            <TableColumn fx:id="clHoraTurnos" prefWidth="75.0" text="Hora" />
+            <TableColumn fx:id="clFechaTurnos" prefWidth="75.0" text="Fecha" />
+            <TableColumn fx:id="clCantClasesTurnos" minWidth="0.0" prefWidth="84.0" text="CantClases" />
+         </columns>
+      </TableView>
+      <Group layoutX="447.0" layoutY="393.0">
+         <children>
+            <JFXTextField fx:id="tfBuscarClientes" layoutX="-433.0" layoutY="-9.0" onAction="#tfBuscar" prefHeight="25.0" prefWidth="182.0" />
+            <ImageView fitHeight="28.0" fitWidth="42.0" layoutX="-432.0" layoutY="-23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/iconoFind.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Group>
+      <TabPane layoutY="469.0" prefHeight="230.0" prefWidth="708.0" tabClosingPolicy="UNAVAILABLE">
+        <tabs>
+          <Tab text="Asignar Turno">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="208.0" prefWidth="387.0">
+                     <children>
+                        <JFXButton layoutX="439.0" layoutY="40.0" onAction="#handleNuevoTurno" text="Asignar" />
+                        <GridPane layoutX="-7.0" layoutY="20.0" prefHeight="210.0" prefWidth="402.0">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints maxHeight="36.0" minHeight="10.0" prefHeight="36.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="29.0" minHeight="10.0" prefHeight="29.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="25.0" minHeight="10.0" prefHeight="25.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                              <RowConstraints maxHeight="35.0" minHeight="10.0" prefHeight="35.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label />
+                              <Label text="Cliente:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+                              <Label text="Fecha y Hora:" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+                              <JFXComboBox fx:id="cmbFHTclaseRT" prefHeight="25.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+                              <JFXTextField fx:id="tfIDturnos" disable="true" GridPane.columnIndex="1" />
+                              <Label text="idTurnos:" GridPane.halignment="RIGHT" />
+                              <JFXTextField fx:id="tfEstadoTurno" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+                              <JFXTextField fx:id="tfDetalleTurno" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+                              <Label text="Estado:" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+                              <Label text="Detalle:" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+                              <JFXComboBox fx:id="cmbDatosCliente" prefHeight="25.0" prefWidth="206.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+                           </children>
+                        </GridPane>
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+          <Tab text="Editar Reserva">
+            <content>
+              <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0">
+                     <children>
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                              <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
+                           <children>
+                              <Label />
+                              <JFXTextField GridPane.columnIndex="1" GridPane.rowIndex="6" />
+                           </children>
+                        </GridPane>
+                        <JFXButton layoutX="283.0" layoutY="36.0" text="Reestablecer Clase" />
+                     </children>
+                  </AnchorPane>
+            </content>
+          </Tab>
+        </tabs>
+      </TabPane>
+   </children>
+</AnchorPane>

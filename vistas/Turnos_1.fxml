@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gymsystem.vistas.TurnosController">
+   <children>
+      <ImageView fitHeight="646.0" fitWidth="701.0" opacity="0.56" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../recursos/fotoGim.jpg" />
+         </image>
+      </ImageView>
+      <Label layoutX="310.0" layoutY="27.0" text="Turnos" textFill="#ab0909">
+         <font>
+            <Font name="System Bold" size="25.0" />
+         </font>
+      </Label>
+      <TableView fx:id="tablaTurno" layoutX="28.0" layoutY="83.0" prefHeight="273.0" prefWidth="224.0">
+         <columns>
+            <TableColumn fx:id="clApellidoTurnos" prefWidth="75.0" text="Apellido" />
+            <TableColumn fx:id="clNombreTurnos" prefWidth="75.0" text="Nombre" />
+            <TableColumn fx:id="clDniTurnos" prefWidth="75.0" text="Dni" />
+         </columns>
+      </TableView>
+      <Group layoutX="455.0" layoutY="395.0">
+         <children>
+            <JFXTextField fx:id="tfBuscarClientes" layoutX="-433.0" layoutY="-22.0" onAction="#tfBuscar" prefHeight="25.0" prefWidth="182.0" />
+            <ImageView fitHeight="28.0" fitWidth="42.0" layoutX="-432.0" layoutY="-23.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../recursos/iconoFind.png" />
+               </image>
+            </ImageView>
+         </children>
+      </Group>
+      <JFXButton layoutX="604.0" layoutY="549.0" text="Asignar" />
+      <JFXButton layoutX="483.0" layoutY="586.0" text="Reestablecer" />
+      <JFXButton layoutX="495.0" layoutY="611.0" text="Finalizar" />
+      <Separator layoutX="294.0" layoutY="83.0" orientation="VERTICAL" prefHeight="280.0" prefWidth="21.0" />
+      <GridPane layoutX="310.0" layoutY="81.0" prefHeight="273.0" prefWidth="311.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label text="Estado Turno:" GridPane.halignment="RIGHT" />
+            <Label text="Hora:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <Label text="Fecha:" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <Label text="TipoClase:" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+            <Label text="CantClases:" GridPane.halignment="RIGHT" GridPane.rowIndex="4" />
+            <Label text="Restantes:" GridPane.halignment="RIGHT" GridPane.rowIndex="6" />
+            <Label fx:id="lbEstadoTurno" prefHeight="17.0" prefWidth="34.0" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" />
+            <Label fx:id="lbHora" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="1" />
+            <Label fx:id="lbFecha" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="2" />
+            <Label fx:id="lbTipoClase" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="3" />
+            <Label fx:id="lbAsistidas" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="5" />
+            <Label text="Asistidas:" GridPane.halignment="RIGHT" GridPane.rowIndex="5" />
+            <Label fx:id="lbCantClases" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+            <Label fx:id="lbRestantes" text="Label" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="6" />
+         </children>
+      </GridPane>
+      <Label layoutX="21.0" layoutY="428.0" text="Reserva de Turno">
+         <font>
+            <Font name="System Bold" size="20.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="12.0" layoutY="484.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+            <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label />
+            <Label text="idAbono:" GridPane.halignment="RIGHT" GridPane.rowIndex="1" />
+            <Label text="idClases:" GridPane.halignment="RIGHT" GridPane.rowIndex="3" />
+            <Label text="estadoTurno:" GridPane.rowIndex="4" />
+            <Label text="idAbono:" GridPane.halignment="RIGHT" />
+            <Label text="Detalle:" GridPane.rowIndex="5" />
+            <JFXComboBox fx:id="cmbFechaYhoraRT" prefHeight="25.0" prefWidth="103.0" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <JFXComboBox fx:id="cmbCantClasesRT" prefHeight="25.0" prefWidth="102.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Label text="idClases:" GridPane.halignment="RIGHT" GridPane.rowIndex="2" />
+            <JFXComboBox fx:id="cmbTipoClaseRT" prefHeight="25.0" prefWidth="99.0" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <JFXComboBox fx:id="cmbDniClienteRT" prefHeight="25.0" prefWidth="102.0" GridPane.columnIndex="1" />
+            <JFXTextField fx:id="tfEstadoTurnoRT" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <JFXTextField fx:id="tfDetalleTurnoRT" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+         </children>
+      </GridPane>
+      <GridPane layoutX="475.0" layoutY="501.0" prefHeight="30.0" prefWidth="202.0">
+         <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="160.0" minWidth="10.0" prefWidth="99.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="137.0" minWidth="10.0" prefWidth="103.0" />
+         </columnConstraints>
+         <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+         </rowConstraints>
+         <children>
+            <Label prefHeight="17.0" prefWidth="110.0" text="Descontar Clase:" />
+            <JFXTextField fx:id="tfDescontarClases" prefHeight="25.0" prefWidth="124.0" GridPane.columnIndex="1" />
+         </children>
+      </GridPane>
+   </children>
+</AnchorPane>

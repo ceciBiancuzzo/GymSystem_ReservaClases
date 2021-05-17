@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Menu?>
+<?import javafx.scene.control.MenuBar?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="700.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gymsystem.vistas.PrincipalController">
+   <top>
+      <MenuBar stylesheets="@../recursos/estilos/principal.css" BorderPane.alignment="CENTER">
+        <menus>
+          <Menu mnemonicParsing="false" text="Sistema">
+            <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onMostrarPrincipal" text="Inicio" />
+                  <MenuItem mnemonicParsing="false" onAction="#onVistaUsuarios" text="Usuarios" />
+              <MenuItem mnemonicParsing="false" onAction="#onCerrarSesion" text="Cerrar sesión" />
+                  <MenuItem mnemonicParsing="false" onAction="#onSalir" text="Salir" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Clientes">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#verClientes" text="Gestionar" />
+                  <MenuItem mnemonicParsing="false" onAction="#handleSaveAs" text="Exportar XML" />
+                  <MenuItem mnemonicParsing="false" onAction="#onImportarXml" text="Importar XML" />
+                  <MenuItem mnemonicParsing="false" onAction="#okReporte" text="Reporte" />
+                  <MenuItem mnemonicParsing="false" onAction="#exportarCSV" text="Exportar CSV" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Clases">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#verClases" text="Gestionar" />
+                  <MenuItem fx:id="bartChart" mnemonicParsing="false" onAction="#handleShowBirthdayStatistics" text="Estadisticas" />
+            </items>
+          </Menu>
+            <Menu mnemonicParsing="false" onAction="#onVerAbonos" text="Abonos">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onVerAbonos" text="Gestionar" />
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" onAction="#onVerTurnos" text="Turnos">
+               <items>
+                  <MenuItem mnemonicParsing="false" onAction="#onVerTurnos" text="Gestionar" />
+                  <MenuItem mnemonicParsing="false" onAction="#okReporteTurnos" text="Reporte" />
+               </items>
+            </Menu>
+        </menus>
+      </MenuBar>
+   </top>
+</BorderPane>

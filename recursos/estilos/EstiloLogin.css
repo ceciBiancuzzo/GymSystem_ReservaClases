@@ -1,0 +1,28 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 30-ago-2020, 19:44:45
+    Author     : cecilia
+*/
+
+.label_txtFields{
+    -fx-prompt-text-fill: WHITE;
+    -fx-color-text: white;
+    -fx-highlight-text-fill: white;
+    -fx-text-inner-color: white;
+    -fx-text-prompt-color: white;
+}
+
+.label_passFields{
+    -fx-prompt-text-fill: WHITE;
+    -fx-color-text: white;
+    -fx-highlight-text-fill: white;
+    -fx-text-inner-color: white;
+    -fx-text-prompt-color: white;
+
+
+}
+

@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXDatePicker?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane id="AnchorPane" fx:id="APcliente" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" minHeight="-Infinity" minWidth="-Infinity" prefHeight="646.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/10.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gymsystem.vistas.ClientesController">
+   <children>
+      <ImageView fitHeight="623.0" fitWidth="700.0" opacity="0.55" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="179.625" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <image>
+            <Image url="@../recursos/fotoGim.jpg" />
+         </image>
+      </ImageView>
+      <TableView fx:id="tablaClientes" layoutX="20.0" layoutY="367.0" prefHeight="231.0" prefWidth="574.0">
+        <columns>
+            <TableColumn fx:id="dniColumn" prefWidth="75.0" text="dni" />
+            <TableColumn fx:id="fechaColumn" prefWidth="124.0" text="fecha de nacimiento" />
+          <TableColumn fx:id="nombreColumn" prefWidth="74.0" text="Nombre" />
+          <TableColumn fx:id="apellidoColumn" prefWidth="75.0" text="Apellido" />
+            <TableColumn fx:id="telefonoColumn" prefWidth="75.0" text="telefono" />
+            <TableColumn fx:id="emailColumn" prefWidth="75.0" text="email" />
+            <TableColumn fx:id="estadoColumn" prefWidth="75.0" text="estado" />
+        </columns>
+      </TableView>
+      <HBox layoutX="185.0" layoutY="323.0" prefHeight="25.0" prefWidth="332.0" spacing="10.0">
+         <children>
+            <Button mnemonicParsing="false" onAction="#handleLimpiar" prefHeight="25.0" prefWidth="75.0" text="Limpiar">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#a43c3c" />
+                     </light>
+                  </Lighting>
+               </effect></Button>
+            <Button layoutX="357.0" layoutY="399.0" mnemonicParsing="false" onAction="#handleNuevoCliente" prefHeight="25.0" prefWidth="75.0" text="Nuevo">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#bc4040" />
+                     </light>
+                  </Lighting>
+               </effect></Button>
+            <Button layoutX="422.0" layoutY="399.0" mnemonicParsing="false" onAction="#handleEditarCliente" prefHeight="25.0" prefWidth="75.0" text="Editar">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#c33f3f" />
+                     </light>
+                  </Lighting>
+               </effect></Button>
+            <Button layoutX="490.0" layoutY="399.0" mnemonicParsing="false" onAction="#handleEliminarCliente" prefHeight="25.0" prefWidth="75.0" text="Eliminar">
+               <effect>
+                  <Lighting>
+                     <bumpInput>
+                        <Shadow />
+                     </bumpInput>
+                     <light>
+                        <Light.Distant color="#bc3c3c" />
+                     </light>
+                  </Lighting>
+               </effect></Button>
+         </children>
+      </HBox>
+      <Label layoutX="264.0" layoutY="14.0" text="Clientes">
+         <font>
+            <Font name="System Bold" size="32.0" />
+         </font>
+      </Label>
+      <GridPane layoutX="204.0" layoutY="72.0" prefHeight="231.0" prefWidth="358.0">
+        <columnConstraints>
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="213.0" minWidth="10.0" prefWidth="111.0" />
+          <ColumnConstraints hgrow="SOMETIMES" maxWidth="300.0" minWidth="10.0" prefWidth="247.0" />
+        </columnConstraints>
+        <rowConstraints>
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        </rowConstraints>
+         <children>
+            <Label text="Fecha Nacimiento" GridPane.halignment="RIGHT" GridPane.rowIndex="1">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label text="Nombre" GridPane.halignment="RIGHT" GridPane.rowIndex="2">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label text="Apellido" GridPane.halignment="RIGHT" GridPane.rowIndex="3">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label text="Dni" GridPane.halignment="RIGHT">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label text="Telefono" GridPane.halignment="RIGHT" GridPane.rowIndex="4">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label text="Email" GridPane.halignment="RIGHT" GridPane.rowIndex="5">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <Label text="Estado" GridPane.halignment="RIGHT" GridPane.rowIndex="6">
+               <GridPane.margin>
+                  <Insets right="5.0" />
+               </GridPane.margin>
+               <font>
+                  <Font name="System Bold" size="12.0" />
+               </font></Label>
+            <TextField fx:id="nombreField" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+            <TextField fx:id="ApellidoField" GridPane.columnIndex="1" GridPane.rowIndex="3" />
+            <TextField fx:id="dniField" GridPane.columnIndex="1" />
+            <TextField fx:id="telefonoField" GridPane.columnIndex="1" GridPane.rowIndex="4" />
+            <TextField fx:id="emailField" GridPane.columnIndex="1" GridPane.rowIndex="5" />
+            <JFXDatePicker fx:id="fechaPicker" defaultColor="#0c0d0d" prefHeight="28.0" prefWidth="324.0" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+            <Group GridPane.columnIndex="1" GridPane.rowIndex="6">
+               <children>
+                  <JFXRadioButton fx:id="rbActivo" layoutX="12.0" layoutY="12.0" text="Activo">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                     <toggleGroup>
+                        <ToggleGroup fx:id="activo" />
+                     </toggleGroup>
+                  </JFXRadioButton>
+                  <JFXRadioButton fx:id="rbInactivo" layoutX="113.0" layoutY="12.0" text="Suspendido" toggleGroup="$activo">
+                     <font>
+                        <Font name="System Bold" size="11.0" />
+                     </font>
+                  </JFXRadioButton>
+               </children>
+            </Group>
+         </children>
+      </GridPane>
+      <Label fx:id="lNotificaciones" layoutX="98.0" layoutY="74.0" prefHeight="27.0" prefWidth="173.0" textFill="#d00d0d">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>
